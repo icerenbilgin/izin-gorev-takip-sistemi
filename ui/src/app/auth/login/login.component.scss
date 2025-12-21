@@ -1,0 +1,20 @@
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #001432, #003366);
+}
+
+.login-card {
+    width: 100%;
+    max-width: 380px;
+}
+
+.field {
+    margin-bottom: 1.2rem;
+}
+
+.login-btn {
+    width: 100%;
+}

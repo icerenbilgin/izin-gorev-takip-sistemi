@@ -1,0 +1,14 @@
+:host ::ng-deep .p-button-text {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+:host ::ng-deep .p-button-text.p-button-danger {
+    color: #e53935;
+}
+
+:host ::ng-deep .p-button-text.p-button-danger:hover {
+    background: transparent !important;
+    color: #c62828;
+}

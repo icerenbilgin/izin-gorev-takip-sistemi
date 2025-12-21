@@ -1,0 +1,52 @@
+<p-toast position="top-right"></p-toast>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h3 class="logo">İzin & Görev</h3>
+
+        <ul class="menu">
+
+            <li routerLinkActive="active">
+                <a routerLink="/dashboard">Dashboard</a>
+            </li>
+
+            <li *ngIf="userRoleId === 4" routerLinkActive="active">
+                <a routerLink="/task/ekle">Görev Ekle</a>
+            </li>
+
+            <li routerLinkActive="active">
+                <a routerLink="/task/liste">Görevler</a>
+            </li>
+
+            <li routerLinkActive="active">
+                <a routerLink="/izin/ekle">İzin Başvurusu</a>
+            </li>
+
+            <li routerLinkActive="active">
+                <a routerLink="/izin/liste">İzinler</a>
+            </li>
+
+            <li *ngIf="userRoleId === 3" routerLinkActive="active">
+                <a routerLink="/kisi/ekle">Kullanıcı Ekle</a>
+            </li>
+
+            <li *ngIf="userRoleId === 3" routerLinkActive="active">
+                <a routerLink="/kisi/liste">Kullanıcılar</a>
+            </li>
+
+            <li class="logout-item">
+                <button type="button" class="logout-btn" (click)="logout(); $event.stopPropagation()">
+                    <i class="pi pi-sign-out"></i>
+                    <span>Çıkış</span>
+                </button>
+            </li>
+
+        </ul>
+    </aside>
+
+    <main class="content">
+        <router-outlet></router-outlet>
+    </main>
+
+</div>

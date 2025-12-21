@@ -1,0 +1,21 @@
+<div class="login-container">
+    <p-card class="login-card" header="Giriş Yap">
+        <form [formGroup]="loginForm" class="p-fluid">
+            <div class="field">
+                <label for="email">E-posta</label>
+                <input id="email" type="email" pInputText formControlName="email"
+                    placeholder="E-posta adresinizi giriniz" />
+            </div>
+            <div class="field">
+                <label for="password">Şifre</label>
+                <input id="password" type="password" pInputText formControlName="password"
+                    placeholder="Şifrenizi giriniz" />
+            </div>
+            <button pButton type="button" label="Giriş Yap" icon="pi pi-sign-in" class="login-btn" (click)="login()">
+            </button>
+        </form>
+    </p-card>
+</div>
+
+
+

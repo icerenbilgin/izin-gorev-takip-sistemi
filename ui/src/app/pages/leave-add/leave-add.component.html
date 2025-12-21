@@ -1,0 +1,38 @@
+<div class="page-container">
+    <p-card header="İzin Ekle">
+
+        <form [formGroup]="formGroup" class="p-fluid">
+
+            <div class="field">
+                <label>İzin Türü</label>
+                <p-dropdown [options]="leaveTypes" optionLabel="leaveTypeName" optionValue="leaveTypeName" placeholder="Seçiniz"
+                    formControlName="leaveTypeId">
+                </p-dropdown>
+            </div>
+ 
+            <div class="field">
+                <label>Başlangıç Tarihi</label>
+                <p-calendar formControlName="startDate" dateFormat="dd.mm.yy">
+                </p-calendar>
+            </div>
+
+            <div class="field">
+                <label>Bitiş Tarihi</label>
+                <p-calendar formControlName="endDate" dateFormat="dd.mm.yy">
+                </p-calendar>
+            </div>
+
+            <div class="field">
+                <label>Açıklama</label>
+                <input pInputText formControlName="description" />
+            </div>
+
+            <div class="mt-3">
+                <button pButton type="button" label="Kaydet" icon="pi pi-save" (click)="save()">
+                </button>
+            </div>
+
+        </form>
+
+    </p-card>
+</div>

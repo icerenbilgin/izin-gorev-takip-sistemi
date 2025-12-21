@@ -1,0 +1,62 @@
+<p-card header="Görev Listesi">
+
+    <div class="mb-2 text-right">
+        <button pButton label="Yeni Görev" icon="pi pi-plus" class="p-button-success" routerLink="/tasks/add">
+        </button>
+    </div>
+    <br>
+    <p-table [value]="tasks" [loading]="loading" [rows]="10" [paginator]="true" responsiveLayout="scroll"
+        styleClass="p-datatable-sm">
+
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Görev</th>
+                <th>Oluşturan</th>
+                <th>Atanan</th>
+                <th>Durum</th>
+                <th>Aktif</th>
+                <th class="text-center">İşlemler</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-row>
+            <tr>
+                <td>{{ row.taskContent }}</td>
+
+                <td>{{ row.createdUserName }}</td>
+
+                <td>{{ row.assignedUserName }}</td>
+
+                <td>
+                    <p-tag [value]="getStatusText(row.taskStatusId)" [severity]="getStatusSeverity(row.taskStatusId)">
+                    </p-tag>
+                </td>
+
+                <td>
+                    <p-tag [value]="row.isActive ? 'Aktif' : 'Pasif'" [severity]="row.isActive ? 'success' : 'danger'">
+                    </p-tag>
+                </td>
+
+                <td class="text-center">
+                    <button pButton icon="pi pi-pencil" class="p-button-text p-button-sm">
+                    </button>
+
+                    <button pButton type="button" icon="pi pi-trash" class="p-button-text p-button-danger p-button-sm"
+                        (click)="deleteTask(row.taskId)">
+                    </button>
+
+                </td>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="6" class="text-center">
+                    Kayıt bulunamadı
+                </td>
+            </tr>
+        </ng-template>
+
+    </p-table>
+
+</p-card>

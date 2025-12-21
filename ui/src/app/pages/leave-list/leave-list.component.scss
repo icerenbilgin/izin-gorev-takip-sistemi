@@ -1,0 +1,23 @@
+.approve-btn {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    .pi {
+        color: #22c55e;
+        font-size: 1.2rem;
+        font-weight: 900;
+    }
+
+    &:hover {
+        background: transparent !important;
+
+        .pi {
+            color: #16a34a;
+        }
+    }
+
+    &:focus {
+        box-shadow: none !important;
+    }
+}

@@ -1,0 +1,97 @@
+<div class="grid">
+    <h1>
+        Hoşgeldin {{ user?.name }} {{ user?.lastName }}
+    </h1>
+    <br>
+    <div class="col-12 md:col-4">
+        <p-card header="Kişi Bilgilerim">
+            <div class="info-row">
+                <span class="label">Ad Soyad</span>
+                <span class="value">{{ user?.name }} {{ user?.lastName }}</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">E-posta</span>
+                <span class="value">{{ user?.email }}</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Rol</span>
+                <span class="value">{{ user?.userRoleName }}</span>
+            </div>
+        </p-card>
+    </div>
+    <br>
+    <div class="col-12 md:col-8">
+        <p-card header="İzin Başvurularım">
+            <p-table [value]="leaveRequests" [rows]="5" [paginator]="true" responsiveLayout="scroll"
+                styleClass="p-datatable-sm">
+
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>İzin Türü</th>
+                        <th>Başlangıç</th>
+                        <th>Bitiş</th>
+                        <th>Gün</th>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-row>
+                    <tr>
+                        <td>{{ row.leaveTypeName }}</td>
+                        <td>{{ row.startedDate | date: 'dd.MM.yyyy' }}</td>
+                        <td>{{ row.finishDate | date: 'dd.MM.yyyy' }}</td>
+                        <td>{{ row.dayCount }}</td>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="4" class="text-center">
+                            İzin başvurusu bulunamadı
+                        </td>
+                    </tr>
+                </ng-template>
+
+            </p-table>
+        </p-card>
+    </div>
+
+    <br>
+    <div class="col-12">
+        <p-card header="Görevlerim">
+            <p-table [value]="tasks" [rows]="5" [paginator]="true" responsiveLayout="scroll"
+                styleClass="p-datatable-sm">
+
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>Görev</th>
+                        <th>Durum</th>
+                        <th>Başlangıç</th>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-task>
+                    <tr>
+                        <td>{{ task.taskContent }}</td>
+                        <td>
+                            <p-tag [value]="task.taskStatusName" severity="info">
+                            </p-tag>
+                        </td>
+                        <td>{{ task.startedDate | date: 'dd.MM.yyyy' }}</td>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            Görev bulunamadı
+                        </td>
+                    </tr>
+                </ng-template>
+
+            </p-table>
+        </p-card>
+    </div>
+
+</div>

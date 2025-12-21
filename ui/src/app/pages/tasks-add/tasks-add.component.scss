@@ -1,0 +1,29 @@
+.task-card {
+    width: 100%;
+}
+
+.task-form {
+    .field {
+        margin-bottom: 1.2rem;
+    }
+
+    label {
+        font-weight: 500;
+        margin-bottom: 0.4rem;
+        display: block;
+    }
+}
+
+.full-width-textarea,
+.full-width-dropdown {
+    width: 100%;
+}
+
+:host ::ng-deep .p-inputtextarea {
+    width: 100%;
+    resize: vertical;
+}
+
+:host ::ng-deep .p-dropdown {
+    width: 100%;
+}

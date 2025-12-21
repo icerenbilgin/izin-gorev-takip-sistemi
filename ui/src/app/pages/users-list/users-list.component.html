@@ -1,0 +1,60 @@
+<p-card header="Kullanıcı Listesi" class="user-list-card">
+  <p-table [value]="users" [loading]="loading" [rows]="10" [paginator]="true" responsiveLayout="scroll"
+    styleClass="p-datatable-sm user-table">
+
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Ad Soyad</th>
+        <th>E-posta</th>
+        <th>Rol</th>
+        <th>Departman</th>
+        <th>Durum</th>
+        <th class="text-center actions-header">İşlemler</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-row>
+      <tr>
+        <td class="name-col">
+          {{ row.name }} {{ row.lastName }}
+        </td>
+
+        <td class="email-col">
+          {{ row.email }}
+        </td>
+
+        <td class="role-col">
+          {{ row.userRoleName }}
+        </td>
+
+        <td class="department-col">
+          {{ row.departmentName || '-' }}
+        </td>
+
+        <td class="status-col">
+          <p-tag [value]="getStatusText(row.isActive)" [severity]="getStatusSeverity(row.isActive)">
+          </p-tag>
+        </td>
+
+        <td class="actions-col">
+          <button pButton type="button" icon="pi pi-pencil"
+            class="p-button-rounded p-button-text p-button-sm action-btn edit-btn">
+          </button>
+
+          <button pButton type="button" icon="pi pi-trash" class="p-button-text p-button-danger p-button-sm"
+            (click)="deleteUser(row.userId)">
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="6" class="text-center empty-message">
+          Kayıt bulunamadı
+        </td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+</p-card>

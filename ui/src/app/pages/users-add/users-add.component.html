@@ -1,0 +1,49 @@
+<div class="page-container">
+    <p-card header="Kullanıcı Ekle" class="task-card">
+
+        <form [formGroup]="formGroup" class="p-fluid task-form">
+
+            <div class="field">
+                <label>Ad</label>
+                <input pInputText formControlName="name" />
+            </div>
+
+            <div class="field">
+                <label>Soyad</label>
+                <input pInputText formControlName="lastName" />
+            </div>
+
+            <div class="field">
+                <label>E-posta</label>
+                <input pInputText formControlName="email" />
+            </div>
+
+            <div class="field">
+                <label>Şifre</label>
+                <p-password formControlName="password" toggleMask="true" [feedback]="false">
+                </p-password>
+            </div>
+
+            <div class="field">
+                <label>Rol</label>
+                <p-dropdown [options]="userRoles" optionLabel="userRoleName" optionValue="userRoleName"
+                    placeholder="Seçiniz" formControlName="userRoleId">
+                </p-dropdown>
+            </div>
+
+            <div class="field">
+                <label>Departman</label>
+                <p-dropdown [options]="departments" optionLabel="departmentName" optionValue="departmentName"
+                    laceholder="Seçiniz" formControlName="departmentId">
+                </p-dropdown>
+            </div>
+
+            <div class="mt-3">
+                <button pButton type="button" label="Kaydet" icon="pi pi-save" (click)="save()">
+                </button>
+            </div>
+
+        </form>
+
+    </p-card>
+</div>

@@ -1,0 +1,35 @@
+<div class="page-container">
+    <p-card header="Görev Ekle" class="task-card">
+
+        <form [formGroup]="formGroup" class="p-fluid task-form">
+
+            <div class="field">
+                <label>Görev Açıklaması</label>
+                <textarea pInputTextarea rows="4" formControlName="taskContent" placeholder="Görev detayını giriniz"
+                    class="full-width-textarea">
+        </textarea>
+            </div>
+
+            <div class="field">
+                <label>Atanan Kullanıcı</label>
+                <p-dropdown [options]="users" optionLabel="name" optionValue="userId" placeholder="Seçiniz"
+                    formControlName="assignedUserId" class="full-width-dropdown">
+                </p-dropdown>
+            </div>
+
+            <div class="field">
+                <label>Görev Durumu</label>
+                <p-dropdown [options]="taskStatuses" optionLabel="taskStatusName" optionValue="taskStatusId"
+                    placeholder="Seçiniz" formControlName="taskStatusId" class="full-width-dropdown">
+                </p-dropdown>
+            </div>
+
+            <div class="mt-3">
+                <button pButton type="button" label="Kaydet" icon="pi pi-save" (click)="save()">
+                </button>
+            </div>
+
+        </form>
+
+    </p-card>
+</div>
