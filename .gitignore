@@ -1,0 +1,17 @@
+# .NET
+**/bin/
+**/obj/
+.vs/
+
+# Angular / Node
+**/node_modules/
+dist/
+.angular/
+
+# Environment
+.env
+.env.*
+
+# IDE / OS
+.vscode/
+.DS_Store
