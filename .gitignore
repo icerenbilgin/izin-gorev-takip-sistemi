@@ -15,3 +15,11 @@ dist/
 # IDE / OS
 .vscode/
 .DS_Store
+
+# Backend configuration files
+api/appsettings.json
+api/appsettings.Development.json
+
+# Frontend environment files
+ui/src/environments/environment.ts
+ui/src/environments/environment.development.ts
